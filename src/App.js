@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import Login from './Login';
+import Navmenu from './Navmenu';
 import logo from './logo.svg';
 import firebase from './firebase';
 import './App.css';
@@ -18,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <Login />
+      <Navmenu/>
     </div>
   );
 }
