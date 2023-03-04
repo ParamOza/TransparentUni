@@ -3,7 +3,7 @@ import React from "react";
 //Write an About component that renders a short paragraph about the site.
 const About = () => {
     return (
-        <div>      
+        <div class = "body align-items-center">      
         <h1 style={{color: "lightblue"}}>About</h1>
         <p style={{border: "3px solid lightblue"}}>
             Welcome to TransparentUni! We are a resource for prospective college students to connect with current college students

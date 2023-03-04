@@ -2,7 +2,6 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Body from './Body';
 import Navmenu from './Navmenu';
-import logo from './logo.svg';
 import firebase from './firebase';
 import './App.css';
 

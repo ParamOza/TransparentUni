@@ -10,7 +10,7 @@ const AuthedUser = () => {
 
     return (
         <div>
-        <p>Welcome, {user.displayName}</p>
+            <p>Welcome, {user.displayName}</p>
         </div>
     );
-    }
+}
