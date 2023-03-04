@@ -24,6 +24,14 @@
   border-color: lightblue;
 }
 
+.aboutImage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10;
+  height: 10;
+}
+
 .header-color-one{
   color: lightcoral;
 }

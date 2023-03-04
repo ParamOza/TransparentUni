@@ -5,7 +5,7 @@ import './App.css';
 const Footer = () => {
     return (
         <Container>
-          <Navbar.Brand>TranparentUNI</Navbar.Brand>
+          <Navbar.Brand>TransparentUni</Navbar.Brand>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               {user ? 
