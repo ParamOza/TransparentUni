@@ -14,7 +14,6 @@ const About = () => {
                     information they need to make the best decision for their health and for their college experience!
                 </p>
             <img className="aboutImage" src="./assets/brains.png" alt="brains"/>
-
             </div>
         </div>
     );
