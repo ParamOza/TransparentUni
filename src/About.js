@@ -5,8 +5,8 @@ const About = () => {
     return (
         <div class = "body d-flex">
             <div class = "my-auto">
-                <h1 style={{color: "lightblue"}}>About</h1>
-                <p style={{border: "3px solid lightblue"}}>
+                <h1>About</h1>
+                <p>
                     Welcome to TransparentUni! We are a resource for prospective college students to connect with current college students
                     and get questions answered about mental health and disability accommodations and accessibility on campus. We hope to establish
                     a community of current college students with accommodations who are willing to share their experiences and be mentors for prospective
