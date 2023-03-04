@@ -28,8 +28,7 @@ const Navmenu = () => {
         <Container>
         <Navbar>
           <Navbar.Brand>TranparentUNI</Navbar.Brand>
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
+          <Navbar.Collapse className="login  justify-content-end">
               {
               user ? 
                 <div>
@@ -37,7 +36,6 @@ const Navmenu = () => {
                   <button onClick={signUserOut}>Sign Out</button>
                 </div> :
                 <Login />}
-            </Nav>
           </Navbar.Collapse>
       </Navbar>
       </Container>
