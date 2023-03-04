@@ -32,7 +32,7 @@ const Navmenu = () => {
               user ? 
                 <div>
                   <p>Welcome, {user.displayName}</p>
-                  <button onClick={signUserOut}>Sign Out</button>
+                  <button class = "btn btn-primary" onClick={signUserOut}>Sign Out</button>
                 </div> :
                 <Login />}
           </Navbar.Collapse>

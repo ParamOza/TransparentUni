@@ -40,3 +40,8 @@
 .body{
   min-height:80vh;
 }
+
+.btn-primary{ 
+  background: lightblue;
+  border-color: lightblue;
+}

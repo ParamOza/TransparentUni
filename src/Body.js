@@ -7,7 +7,7 @@ import About from './About';
 const Body = () => {
     return (
       <Container>
-        <div class = "align-middle">
+        <div id = "align-middle">
             <About />
         </div>
       </Container>
