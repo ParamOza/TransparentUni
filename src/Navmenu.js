@@ -1,4 +1,3 @@
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Login from './Login';
 import Container from 'react-bootstrap/Container';
@@ -15,32 +14,35 @@ const signUserOut = () => {
   });
 }
 const Navmenu = () => {
-    const [user, setUser] = useState(null)
-    const [loading, setLoading] = useState(true);
-    useEffect(() => {
-      firebase.auth().onAuthStateChanged((user) => {
-        setUser(user)
-        setLoading(false)
-      })
-      
-    });
-    return !loading ? (
-        <Container>
-        <Navbar>
-          <Navbar.Brand>TransparentUni</Navbar.Brand>
-          <Navbar.Collapse className="login  justify-content-end">
-              {
-              user ? 
-                <div>
-                  <p>Welcome, {user.displayName}</p>
-                  <button onClick={signUserOut}>Sign Out</button>
-                </div> :
-                <Login />}
-          </Navbar.Collapse>
+  const [user, setUser] = useState(null)
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      setUser(user)
+      setLoading(false)
+    })
+
+  });
+  return !loading ? (
+    <Container>
+      <Navbar>
+        <Navbar.Brand>
+          <span class="header-color-one">Transparent</span><span class="header-color-two">Uni</span>
+          
+        </Navbar.Brand>
+        <Navbar.Collapse className="justify-content-end">
+          {
+            user ?
+              <div>
+                <p>Welcome, {user.displayName}</p>
+                <button class="btn btn-primary" onClick={signUserOut}>Sign Out</button>
+              </div> :
+              <Login />}
+        </Navbar.Collapse>
       </Navbar>
-      </Container>
-    ) : null
-        
+    </Container>
+  ) : null
+
 }
 
 export default Navmenu;
