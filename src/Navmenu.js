@@ -27,7 +27,7 @@ const Navmenu = () => {
     return !loading ? (
         <Container>
         <Navbar>
-          <Navbar.Brand>TranparentUNI</Navbar.Brand>
+          <Navbar.Brand>TransparentUni</Navbar.Brand>
           <Navbar.Collapse className="login  justify-content-end">
               {
               user ? 
