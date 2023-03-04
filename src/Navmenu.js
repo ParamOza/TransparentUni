@@ -25,8 +25,8 @@ const Navmenu = () => {
       
     });
     return !loading ? (
-      <Navbar bg="light" expand="lg">
         <Container>
+        <Navbar>
           <Navbar.Brand>TranparentUNI</Navbar.Brand>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
@@ -39,9 +39,10 @@ const Navmenu = () => {
                 <Login />}
             </Nav>
           </Navbar.Collapse>
-        </Container>
       </Navbar>
+      </Container>
     ) : null
+        
 }
 
 export default Navmenu;
