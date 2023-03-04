@@ -2,12 +2,13 @@
 import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import About from './About';
 
 const Body = () => {
     return (
       <Container>
         <div class = "align-middle">
-            <p class = "m-4">Some text</p>
+            <About />
         </div>
       </Container>
     )
