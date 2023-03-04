@@ -7,6 +7,13 @@ import './App.css';
 import firebase from './firebase';
 import { useEffect, useState } from 'react';
 
+const signUserOut = () => {
+  firebase.auth().signOut().then(() => {
+    // Sign-out successful.
+  }).catch((error) => {
+    // An error happened.
+  });
+}
 const Navmenu = () => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true);
@@ -27,8 +34,9 @@ const Navmenu = () => {
               user ? 
                 <div>
                   <p>Welcome, {user.displayName}</p>
+                  <button onClick={signUserOut}>Sign Out</button>
                 </div> :
-                <Login />}            
+                <Login />}
             </Nav>
           </Navbar.Collapse>
         </Container>
