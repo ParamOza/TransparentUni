@@ -7,16 +7,18 @@ import './App.css';
 
 const Navmenu = () => {
     return (
-      <Navbar bg="light" expand="lg">
         <Container>
+        <Navbar>
           <Navbar.Brand>TranparentUNI</Navbar.Brand>
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              <Login />
-            </Nav>
+          <Navbar.Collapse className="login  justify-content-end" >
+            {user ? 
+              <div>
+                <p>Welcome, {user.displayName}</p>
+              </div> :
+              <Login/>}            
           </Navbar.Collapse>
-        </Container>
       </Navbar>
+        </Container>
     )
 }
 

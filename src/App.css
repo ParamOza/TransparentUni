@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.body{
+  min-height:80vh;
+}
+.login{
+  overflow: hidden;
+}
