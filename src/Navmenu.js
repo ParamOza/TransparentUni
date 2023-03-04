@@ -4,27 +4,36 @@ import Login from './Login';
 import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { auth } from './firebase';
-
-const user = auth.currentUser;
+import firebase from './firebase';
+import { useEffect, useState } from 'react';
 
 const Navmenu = () => {
-    return (
-      <Navbar>
+    const [user, setUser] = useState(null)
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+      firebase.auth().onAuthStateChanged((user) => {
+        setUser(user)
+        setLoading(false)
+      })
+      
+    });
+    return !loading ? (
+      <Navbar bg="light" expand="lg">
         <Container>
           <Navbar.Brand>TranparentUNI</Navbar.Brand>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              {user ? 
+              {
+              user ? 
                 <div>
                   <p>Welcome, {user.displayName}</p>
                 </div> :
-                <Login/>}            
+                <Login />}            
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    )
+    ) : null
 }
 
 export default Navmenu;
