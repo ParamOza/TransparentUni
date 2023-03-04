@@ -4,16 +4,23 @@ import Login from './Login';
 import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { auth } from './firebase';
+
+const user = auth.currentUser;
 
 const Navmenu = () => {
     return (
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">TranparentUNI</Navbar.Brand>
+          <Navbar.Brand href="#home">TransparentUNI</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav"/>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Login />
+              {user ? 
+                <div>
+                  <p>Welcome, {user.displayName}</p>
+                </div> :
+                <Login />}            
             </Nav>
           </Navbar.Collapse>
         </Container>
