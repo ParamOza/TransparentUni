@@ -10,7 +10,7 @@ const user = auth.currentUser;
 
 const Navmenu = () => {
     return (
-      <Navbar bg="light" expand="lg">
+      <Navbar>
         <Container>
           <Navbar.Brand>TranparentUNI</Navbar.Brand>
           <Navbar.Collapse id="basic-navbar-nav">
@@ -19,7 +19,7 @@ const Navmenu = () => {
                 <div>
                   <p>Welcome, {user.displayName}</p>
                 </div> :
-                <Login />}            
+                <Login/>}            
             </Nav>
           </Navbar.Collapse>
         </Container>

@@ -6,8 +6,8 @@ import './App.css';
 const Body = () => {
     return (
       <Container>
-        <div class = "align-middle">
-            <p class = "m-4">Some text</p>
+        <div class = " d-flex align-items-center justify-content-center body">
+            <p class = "m-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus volutpat, eros sed rhoncus aliquam, lacus turpis sodales leo, sit amet cursus lacus orci quis ligula.</p>
         </div>
       </Container>
     )
