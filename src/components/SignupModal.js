@@ -92,7 +92,8 @@ const SignupModal = () => {
                 : null}
                 <Button variant="success" type="submit" disabled={((currentStep != NUM_STEPS) || isLoading) && !loggingIn} onClick={() => {
                     setIsLoading(true);
-                    if(selectedRole === Role.MENTOR && !selectEmail.split("@")[1].includes(".edu")) {
+                    console.log(selectedRole);
+                    if((selectedRole === Role.MENTOR) && !selectEmail.split("@")[1].includes(".edu")) {
                       alert("Please use a school email ending in .edu");
                       setIsLoading(false);
                       return;
@@ -104,16 +105,18 @@ const SignupModal = () => {
                         var user = userCredential.user;
                         console.log(user);
                         if(selectedRole === Role.MENTOR) {
-                          db.collection("users").doc(user.uid).set({
+                          db.collection("users").add({
                             role: Role.MENTOR,
                             email: selectEmail,
                             name: selectName,
-                            school: selectSchool
+                            school: selectSchool,
+                            uid: user.uid,
                           })
                         } else if(selectedRole === Role.MENTEE) {
-                          db.collection("users").doc(user.uid).set({
+                          db.collection("users").add({
                             role: Role.MENTEE,
-                            email: selectEmail
+                            email: selectEmail,
+                            uid: user.uid,
                           })
                         }
                         setIsLoading(false);
