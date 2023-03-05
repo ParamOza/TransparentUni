@@ -5,8 +5,7 @@ import { NUM_STEPS } from '../constants/constants';
 export const userSignupSlice = createSlice({
     name: 'userSignup',
     initialState: {
-        firstName: '',
-        lastName: '',
+        name: '',
         school: '',
         chosenRole: Role.MENTEE,
         email: '',
@@ -23,11 +22,8 @@ export const userSignupSlice = createSlice({
         setPassword: (state, action) => {
             state.password = action.payload;
         },
-        setFirstName: (state, action) => {
-            state.firstName = action.payload;
-        },
-        setLastName: (state, action) => {
-            state.lastName = action.payload;
+        setName: (state, action) => {
+            state.name = action.payload;
         },
         setSchool: (state, action) => {
             state.school = action.payload;
@@ -45,6 +41,6 @@ export const userSignupSlice = createSlice({
     },
 })
 
-export const {setChosenRole, setEmail, setPassword, setFirstName, setLastName, setSchool, nextStep, prevStep, setStep} = userSignupSlice.actions;
+export const {setChosenRole, setEmail, setPassword, setName, setSchool, nextStep, prevStep, setStep} = userSignupSlice.actions;
 
 export default userSignupSlice.reducer;
