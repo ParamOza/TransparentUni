@@ -17,18 +17,27 @@ const MentorPicker = () => {
         );
     }, []);
 
+    const addConversation = (uidFrom, uidTo) => {
+        firebase.firestore().collection("conversations").add({
+            from: uidFrom,
+            to: uidTo,
+        });
+    }
+
     return (
         <div>
             <h1>Choose a mentor</h1>
             {foundMentors.map((mentor) => {
+                console.log(mentor.uid);
                 return (
                     <Card style={{ width: '18rem' }}>
                         <Card.Body>
-                            <Card.Title>Anonymous</Card.Title>
+                            <Card.Title>{mentor.name}</Card.Title>
                             <Card.Text>
                                 {mentor.school}
                             </Card.Text>
                             <Button variant="primary" onClick={() => {
+                                addConversation(firebase.auth().currentUser.uid, mentor.uid);
                                 dispatch(setChosenMentor(mentor));
                             }}>Choose</Button>
                         </Card.Body>
