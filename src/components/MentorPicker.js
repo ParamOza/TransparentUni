@@ -25,7 +25,7 @@ const MentorPicker = () => {
     }
 
     return (
-        <div>
+        <div class = "container align-middle">
             <h1>Choose a mentor</h1>
             {foundMentors.map((mentor) => {
                 console.log(mentor.uid);
