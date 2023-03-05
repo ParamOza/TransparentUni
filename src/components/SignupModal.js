@@ -3,6 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import {useSelector, useDispatch} from 'react-redux';
 import { hideModal } from '../redux/modalSlice';
+import { setIsLoggingIn } from '../redux/loginModalSlice';
 
 const BasicExample = () => {
   return (
@@ -31,11 +32,15 @@ const BasicExample = () => {
 
 const SignupModal = () => {
     const show = useSelector(state => state.modal.show);
+    const loggingIn = useSelector(state => state.loginModal.isLoggingIn);
     const dispatch = useDispatch();
+    const modalTitle = loggingIn ? "Log In" : "Sign Up";
+    console.log(loggingIn);
+    //console.log(modalTitle);
     return (
         <Modal show={show} onHide={() => dispatch(hideModal())}>
             <Modal.Header closeButton>
-                <Modal.Title>Sign Up</Modal.Title>
+                <Modal.Title>{modalTitle}</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
