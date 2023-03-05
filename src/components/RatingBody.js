@@ -8,7 +8,7 @@ const RatingBody = () => {
             <div class =  "d-flex">
             <div class = "my-auto">
                 <p>
-                    Welcome to TransparentUni rankings. Here you will find the highest alumni and student ranked universities based on their accessibility and accommodations for disabilities. Available schools are listed below and are ranked by decreasing ratings.                </p>
+                    Welcome to TransparentUni rankings. Here you will find the highest alumni and student ranked universities based on their accessibility and accommodations for disabilities. Available schools are listed below and are ranked in decreasing order.                </p>
             </div>
         </div>
       </Container>
