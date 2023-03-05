@@ -50,7 +50,7 @@ const ChatCollection = () => {
           !user ? <div className="chat-login">Please log in to chat</div> :
           (!selectedMentor ? <MentorPicker /> : 
           <Fragment>
-          <main> 
+          <main class = "container"> 
              {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
              {<span ref={ref}></span>}
           </main>
