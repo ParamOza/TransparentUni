@@ -5,22 +5,21 @@ const About = () => {
     return (
         <div class = "body d-flex">
             <div class = "my-auto">
-                <h1 style={{color: "lightblue"}}>Welcome Everyone!</h1>
+                <h1>Welcome Everyone!</h1>
                 <p>
-                    Welcome to TransparentUni! We are a resource for prospective college students to connect with current college students
-                    and get questions answered about mental health and disability accommodations and accessibility on campus. We hope to establish
-                    a community of current college students with accommodations who are willing to share their experiences and be mentors for prospective
-                    students who are looking for similar accommodations when they attend college.
+                    Welcome to TransparentUni! We are a resource for prospective and current college students to connect with mentors! These mentors are current 
+                    college students who are willing to share their experiences with mental illness and disability accommodations on campus. We 
+                    hope to establish a community of transparent communication involving all aspects of accommodations/accessibility/resources in universities nationwide.
                 </p>
             <img className="aboutImage" src="./assets/brains.png" alt="brains"/>
             <br></br>
-            <h1 style={{color: "lightblue"}}>Our Mission</h1>
+            <h1>Our Mission</h1>
                 <p>
-                    1. End the stigma around mental health and disability accommodations
+                    1. End the stigma around mental illness and disabilities
                     <br></br>
-                    2. Provide a safe space for all prospective college students to get necessary information on university accommodations and accessibility
+                    2. Provide a safe space for ALL students to get the necessary information on university accommodations and accessibility
                     <br></br>
-                    3. Help prospective college students find the best college for their wellbeing and success
+                    3. Help prospective and current college students find the best university for their wellbeing and success
                 </p>
             </div>
         </div>
