@@ -37,10 +37,10 @@ const Navmenu = () => {
           <Navbar.Collapse id="collapsable-toggle">
             <Nav className="mr-auto">
               <NavDropdown title="Resources">
-                <NavDropdown.Item><Link className = "paths" to="/Ratings">Ratings</Link></NavDropdown.Item>
+                <NavDropdown.Item><Link className = "paths" to="/ratings">Ratings</Link></NavDropdown.Item>
                 {
                   user ?
-                  <NavDropdown.Item><Link className = "paths" to="/Chatroom">Chatroom</Link></NavDropdown.Item> :
+                  <NavDropdown.Item><Link className = "paths" to="/chatroom">Chatroom</Link></NavDropdown.Item> :
                     <div></div>
                 }
               </NavDropdown>
