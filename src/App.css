@@ -57,7 +57,7 @@ h3{
 }
 
 .chatbody {
-  background-color: #d8deed;
+  background-color: white;
 }
 
 .chatform {
@@ -87,7 +87,7 @@ input {
   padding: 0 10px;
 }
 
-.chatp {
+chatp {
   max-width: 600px;
   margin-bottom: 11px;
   line-height: 25px;
@@ -107,12 +107,12 @@ input {
   flex-direction: row-reverse;
 }
 
-.sent p {
+.sent chatp {
   color: #d46f5f;
-  background: white;
+  background: rgb(206, 200, 200);
   align-self: flex-end;
 }
-.received p {
+.received chatp {
   background: #d46f5f;
   color: white;
 }
