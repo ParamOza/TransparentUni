@@ -1,4 +1,4 @@
-import Navbar from 'react-bootstrap/Navbar';
+import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import Login from './Login';
 import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -32,6 +32,23 @@ const Navmenu = () => {
           <span class="header-color-one">Transparent</span><span class="header-color-two">Uni</span>
           
         </Navbar.Brand>
+
+
+        {
+            user ?
+            <div>
+              <Navbar.Toggle aria-controls="collapsable-toggle" />
+              <Navbar.Collapse id="collapsable-toggle">
+                <Nav className="mr-auto">
+                  <NavDropdown title="Resources">
+                    <NavDropdown.Item href="#action/1.1">Chatroom</NavDropdown.Item>
+                  </NavDropdown>
+                </Nav>
+              </Navbar.Collapse>
+            </div>:
+            <div>
+            </div>}
+
         <Navbar.Collapse className="justify-content-end">
           {
             user ?
