@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
-import Ratings from './Ratings';
+import Ratings from './components/Ratings';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store';

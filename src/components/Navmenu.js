@@ -1,5 +1,5 @@
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Login from './Login';
 import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -30,17 +30,17 @@ const Navmenu = () => {
       <SignupModal />
       <Navbar>
         <Navbar.Brand>
-          <span class="header-color-one">Transparent</span><span class="header-color-two">Uni</span>
+          <Link className = "paths" to="/"><span class="header-color-one">Transparent</span><span class="header-color-two">Uni</span></Link>
         </Navbar.Brand>
         <div>
           <Navbar.Toggle aria-controls="collapsable-toggle" />
           <Navbar.Collapse id="collapsable-toggle">
             <Nav className="mr-auto">
               <NavDropdown title="Resources">
-                <NavDropdown.Item><Link className = "paths" to="/ratings">Ratings</Link></NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/ratings" className = "paths" >Ratings</NavDropdown.Item>
                 {
                   user ?
-                  <NavDropdown.Item><Link className = "paths" to="/chatroom">Chatroom</Link></NavDropdown.Item> :
+                  <NavDropdown.Item as={Link} to="/chatroom" className = "paths" >Chatroom</NavDropdown.Item> :
                     <div></div>
                 }
               </NavDropdown>

@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import Footer from './components/Footer';
-import Navmenu from './components/Navmenu';
-import SchoolRatingCard from './components/SchoolRatingCard';
-import RatingBody from './components/RatingBody';
-import firebase from './firebase';
-import './App.css';
+import Footer from './Footer';
+import Navmenu from './Navmenu';
+import SchoolRatingCard from './SchoolRatingCard';
+import RatingBody from './RatingBody';
+import firebase from '../firebase';
+import '../App.css';
 
 
 function Rating() {
@@ -18,7 +18,6 @@ function Rating() {
     events.get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         schools.push({ id: doc.id, ...doc.data() })
-        console.log("flag")
       })
       setSchoolsState(schools); 
     })
@@ -31,7 +30,6 @@ function Rating() {
         <RatingBody />
         {
           schoolsState.map((element) => {
-            console.log(element);
             return <SchoolRatingCard data={{ school: element['university'], numberOfRankings: element['scores'].length, average: avg(element['scores']).toFixed(2)}} />
           })
         }
