@@ -8,12 +8,15 @@
 
 .body{
   min-height:80vh;
-  
 }
 
 .btn-primary{ 
   background: #497184;
-  border-color: #497184;
+  border-color: #497184; 
+}
+.btn-primary:hover{
+  background: #d46f5f;
+  border-color: #d46f5f;
 }
 
 .aboutImage{
@@ -23,7 +26,9 @@
   width: 50%;
   height: 40%;
 }
-
+button:hover{
+  background: #d46f5f;
+}
 .header-color-one{
   color: #d46f5f;
 }
@@ -45,4 +50,9 @@ h3{
 .paths{
   text-decoration: none;
   color: #497184;
+}
+
+.paths:hover{
+  text-decoration: none;
+  color: #d46f5f;
 }
