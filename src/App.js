@@ -14,6 +14,7 @@ function App() {
       setUser(user);
       console.log(user);
     })
+    document.title = "TransparentUni"; 
   }, []);
 
   return (
