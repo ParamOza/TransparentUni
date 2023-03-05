@@ -6,8 +6,6 @@ import SchoolRatingCard from './SchoolRatingCard';
 import RatingBody from './RatingBody';
 import firebase from '../firebase';
 import '../App.css';
-import { element } from 'prop-types';
-
 
 function Rating() {
   const [schoolsState, setSchoolsState] = useState([]);
@@ -31,6 +29,9 @@ function Rating() {
       <Navmenu />
       <div class="body d-flex flex-column justify-content-center">
         <RatingBody />
+        
+        <hr class="hr" />
+
         {
           schoolsState.map((element) => {
             return <SchoolRatingCard data={{office:element['office'],  school: element['university'], numberOfRankings: element['scores'].length, average: avg(element['scores']).toFixed(2)}} />
