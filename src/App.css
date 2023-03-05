@@ -54,5 +54,59 @@ h3{
 
 .paths:hover{
   text-decoration: none;
+}
+
+.chatbody {
+  background-color: #d8deed;
+}
+
+.chatform {
+  height: 8vh;
+  position: fixed;
+  bottom: 0;
+  background-color: #497184;
+  width: 100%;
+  max-width: 30%;
+  border-radius: 10%;
+  display: flex;
+  font-size: 1.5rem;
+}
+
+form button {
+  width: 50%;
+  border-radius: 5%;
+  background-color: #497184;
+}
+
+input {
+  line-height: 1.5;
+  width: 100%;
+  font-size: 1.0rem;
+  background: white;
+  color: black;
+  padding: 0 10px;
+}
+
+.chatp {
+  max-width: 600px;
+  margin-bottom: 11px;
+  line-height: 25px;
+  padding: 15px 25px;
+  border-radius: 25px;
+  position: relative;
+  color: black;
+  text-align: center;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+}
+
+.sent {
+  flex-direction: row-reverse;
+}
+
+.sent p {
   color: #d46f5f;
 }

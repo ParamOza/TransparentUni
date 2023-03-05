@@ -17,7 +17,7 @@ function ChatMessage(props) {
   
     return (
       <div className={`message ${messageClass}`}>
-        <p>{text}</p>
+        <p className="chatp"> {text}</p>
       </div>
     )
   }
