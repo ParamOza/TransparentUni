@@ -53,7 +53,7 @@ const Navmenu = () => {
           {
             user ?
               <div>
-                <p>Welcome, {user.displayName}</p>
+                <p>Welcome, {user.email}</p>
                 <button class="btn btn-primary" onClick={signUserOut}>Sign Out</button>
               </div> :
               <Login />}

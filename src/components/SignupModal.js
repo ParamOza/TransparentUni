@@ -1,3 +1,5 @@
+import React from 'react';
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
@@ -51,6 +53,8 @@ const signMentorUp = (email, password) => {
 }
 
 const SignupModal = () => {
+    const [isLoading, setIsLoading] = useState(false);
+
     const show = useSelector(state => state.modal.show);
     const loggingIn = useSelector(state => state.loginModal.isLoggingIn);
     const dispatch = useDispatch();
@@ -79,8 +83,26 @@ const SignupModal = () => {
                 <Button variant="info" onClick={() => dispatch(nextStep())} disabled={currentStep === NUM_STEPS}>
                     Next
                 </Button>
-                <Button variant="primary" type="submit" disabled={currentStep != NUM_STEPS} onClick={() => signMenteeUp(selectEmail, selectPassword)}>
-                  Submit
+                <Button variant="primary" type="submit" disabled={(currentStep != NUM_STEPS) || isLoading} onClick={() => {
+                    setIsLoading(true);
+                    firebase.auth().createUserWithEmailAndPassword(selectEmail, selectPassword).then((userCredential) => {
+                      // Signed in 
+                      var user = userCredential.user;
+                      console.log(user);
+                      setIsLoading(false);
+                      dispatch(hideModal());
+                      // ...
+                    })
+                    .catch((error) => {
+                      var errorCode = error.code;
+                      var errorMessage = error.message;
+                      console.log("error msg: " + errorMessage);
+                      // ..
+                    }
+                    );
+                  // signMenteeUp(selectEmail, selectPassword)
+                }}>
+                  {isLoading ? 'Loading…' : 'Submit'}
                 </Button>
             </Modal.Footer>
         </Modal>   
