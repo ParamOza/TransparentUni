@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import firebase from './firebase';
 import { useEffect, useState } from 'react';
+import SignupModal from './SignupModal';
 
 const signUserOut = () => {
   firebase.auth().signOut().then(() => {
@@ -25,6 +26,7 @@ const Navmenu = () => {
   });
   return !loading ? (
     <Container>
+      <SignupModal />
       <Navbar>
         <Navbar.Brand>
           <span class="header-color-one">Transparent</span><span class="header-color-two">Uni</span>
