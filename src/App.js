@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import Body from './Body';
-import Footer from './Footer';
-import Navmenu from './Navmenu';
+import Body from './components/Body';
+import Footer from './components/Footer';
+import Navmenu from './components/Navmenu';
 import firebase from './firebase';
 import './App.css';
 

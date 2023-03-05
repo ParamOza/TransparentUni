@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import {useSelector, useDispatch} from 'react-redux';
-import { hideModal } from './redux/modalSlice';
+import { hideModal } from '../redux/modalSlice';
 
 const BasicExample = () => {
   return (
@@ -19,9 +19,9 @@ const BasicExample = () => {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" placeholder="Password" />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
+      {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
+      </Form.Group> */}
       <Button variant="primary" type="submit">
         Submit
       </Button>
