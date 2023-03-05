@@ -3,6 +3,7 @@ import modalReducer from './modalSlice';
 import loginModalReducer from './loginModalSlice';
 import userSignupReducer from './userSignupSlice';
 import mentorReducer from './mentorSlice';
+import studentReducer from './studentSlice';
 
 export default configureStore({
     reducer: {
@@ -10,5 +11,6 @@ export default configureStore({
         loginModal: loginModalReducer,
         userSignup: userSignupReducer,
         mentor: mentorReducer,
+        student: studentReducer,
     },
 })
