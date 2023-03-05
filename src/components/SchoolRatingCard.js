@@ -8,7 +8,7 @@ const Body = ({ data }) => {
             <div class="container card m-2">
                 <div class="row">
                     <div class="py-3 border col-sm">
-                        <h2>{data.school}</h2>
+                        <h2><a class = "paths" href = {data.office}>{data.school}</a></h2>
                     </div>
                     <div class="py-3 border col-sm">
                         <h2>{data.numberOfRankings} {data.numberOfRankings == 1 ? "Rating" : "Ratings"}</h2>
