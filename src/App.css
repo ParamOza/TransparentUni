@@ -109,4 +109,10 @@ input {
 
 .sent p {
   color: #d46f5f;
+  background: white;
+  align-self: flex-end;
+}
+.received p {
+  background: #d46f5f;
+  color: white;
 }
