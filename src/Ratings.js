@@ -8,6 +8,19 @@ import './App.css';
 
 
 function Rating() {
+  const events = firebase.firestore().collection('ratings')
+  events.get().then((querySnapshot) => {
+      const schools = []
+      querySnapshot.forEach((doc) => {
+        schools.push({ id: doc.id, ...doc.data() })
+      })
+      console.log(schools)
+      
+  schools.forEach(element => {
+    console.log(element)
+  });
+  })
+
   return (
     <div className="base">
       <Navmenu />
