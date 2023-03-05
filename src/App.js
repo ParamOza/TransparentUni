@@ -17,7 +17,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="base">
       <Navmenu/>
       <Body/>
       <Footer/>
