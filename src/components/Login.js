@@ -1,6 +1,6 @@
-import { signInWithGoogle } from "./firebase";
+import { signInWithGoogle } from "../firebase";
 import SignupButton from "./SignupButton";
-import './App.css';
+import '../App.css';
 
 
 const Login = () => {
