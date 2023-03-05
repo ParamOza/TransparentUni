@@ -61,14 +61,16 @@ const ChatCollection = () => {
 
         { role === Role.MENTOR ? (!selectedStudent ? <StudentPicker /> :
                   <Fragment>
-                  <main> 
+                  <main class = "container"> 
                      {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
                      {<span ref={ref}></span>}
                   </main>
-                  <form onSubmit={sendMessage}>
+                  <div class = "container">
+                  <form class="chatform mb-4 col text-center" onSubmit={sendMessage}>
                        <input value={formValue} onChange={(e) => setFormValue(e.target.value)}/>
                        <button type="submit">Send</button>
                    </form>
+                   </div>
                    </Fragment>) :
           !user ? <div className="chat-login">Please log in to chat</div> :
           (!selectedMentor ? <MentorPicker /> : 
