@@ -41,11 +41,11 @@ const ChatCollection = () => {
   
       return(<>
         <Navmenu />
-         <main> 
+         <main className="chatbody"> 
             {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
             {<span ref={ref}></span>}
          </main>
-            <form onSubmit={sendMessage}>
+            <form className="chatform" onSubmit={sendMessage}>
               <input value={formValue} onChange={(e) => setFormValue(e.target.value)}/>
               <button type="submit">Send</button>
           </form>
