@@ -1,5 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 import { Role } from '../data/Role';
+import { NUM_STEPS } from '../constants/constants';
 
 export const userSignupSlice = createSlice({
     name: 'userSignup',
@@ -32,7 +33,7 @@ export const userSignupSlice = createSlice({
             state.school = action.payload;
         },
         nextStep: (state) => {
-            state.step += 1;
+            state.step = state.step + 1 > NUM_STEPS ? NUM_STEPS : state.step + 1;
         },
         prevStep: (state) => {
             state.step = state.step - 1 < 1 ? 1 : state.step - 1;
