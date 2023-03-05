@@ -15,11 +15,23 @@ const firebaseConfig = {
 
 export const app = firebase.initializeApp(firebaseConfig);
 export const auth = firebase.auth();
+export const db = firebase.firestore();
 
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
 
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
+export const signInWithUserPass = (email, password) => auth.signInWithEmailAndPassword(email, password);
+export const signUpWithUserPass = (email, password, role) =>  {
+    auth.createUserWithEmailAndPassword(email, password).then((userData) => {
+        db.collection("users").doc(userData.user.uid).set({
+            email: email,
+            role: role
+        }).then(() => {
+            console.log("Document successfully written!");
+        })
+    })
+}
 
 export default firebase;
 
