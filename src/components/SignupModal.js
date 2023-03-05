@@ -15,10 +15,14 @@ import { NUM_STEPS } from '../constants/constants';
 import firebase from '../firebase';
 import { db } from '../firebase';
 
-const getCurrentStepComponent = (step, selectedRole) => {
+const getCurrentStepComponent = (step, selectedRole, loggingIn) => {
   switch(step) {
     case 1:
-      return <RolePicker />;
+      if(loggingIn) {
+        return <MenteeSignup />;
+      } else {
+        return <RolePicker />;
+      }
     case 2: 
     {
       if (selectedRole === Role.MENTOR) {
@@ -75,7 +79,7 @@ const SignupModal = () => {
 
             <Modal.Body>
               {
-                getCurrentStepComponent(currentStep, selectedRole)
+                getCurrentStepComponent(currentStep, selectedRole, loggingIn)
               }
             </Modal.Body>
 
@@ -90,7 +94,7 @@ const SignupModal = () => {
                   </Button>
                 </Fragment>
                 : null}
-                <Button variant="primary" type="submit" disabled={(currentStep != NUM_STEPS) || isLoading} onClick={() => {
+                <Button variant="primary" type="submit" disabled={((currentStep != NUM_STEPS) || isLoading) && !loggingIn} onClick={() => {
                     setIsLoading(true);
                     if(!loggingIn) {
                       console.log(selectEmail);
