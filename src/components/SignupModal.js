@@ -1,3 +1,5 @@
+import React, { Fragment } from 'react';
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
@@ -11,6 +13,7 @@ import MentorSignup from './MentorSignup';
 import MenteeSignup from './MenteeSignup';
 import { NUM_STEPS } from '../constants/constants';
 import firebase from '../firebase';
+import { db } from '../firebase';
 
 const getCurrentStepComponent = (step, selectedRole) => {
   switch(step) {
@@ -51,6 +54,8 @@ const signMentorUp = (email, password) => {
 }
 
 const SignupModal = () => {
+    const [isLoading, setIsLoading] = useState(false);
+
     const show = useSelector(state => state.modal.show);
     const loggingIn = useSelector(state => state.loginModal.isLoggingIn);
     const dispatch = useDispatch();
@@ -59,6 +64,8 @@ const SignupModal = () => {
     const selectedRole = useSelector(state => state.userSignup.chosenRole);
     const selectPassword = useSelector(state => state.userSignup.password);
     const selectEmail = useSelector(state => state.userSignup.email);
+    const selectName = useSelector(state => state.userSignup.name);
+    const selectSchool = useSelector(state => state.userSignup.school);
     //console.log(modalTitle);
     return (
         <Modal show={show} onHide={() => dispatch(hideModal())}>
@@ -73,14 +80,63 @@ const SignupModal = () => {
             </Modal.Body>
 
             <Modal.Footer>
-                <Button variant="secondary" onClick={() => dispatch(prevStep())} disabled={currentStep === 1}>
-                    Previous
-                </Button>
-                <Button variant="info" onClick={() => dispatch(nextStep())} disabled={currentStep === NUM_STEPS}>
-                    Next
-                </Button>
-                <Button variant="primary" type="submit" disabled={currentStep != NUM_STEPS} onClick={() => signMenteeUp(selectEmail, selectPassword)}>
-                  Submit
+              {!loggingIn ? 
+                <Fragment>
+                  <Button variant="secondary" onClick={() => dispatch(prevStep())} disabled={currentStep === 1}>
+                      Previous
+                  </Button>
+                  <Button variant="info" onClick={() => dispatch(nextStep())} disabled={currentStep === NUM_STEPS}>
+                      Next
+                  </Button>
+                </Fragment>
+                : null}
+                <Button variant="primary" type="submit" disabled={(currentStep != NUM_STEPS) || isLoading} onClick={() => {
+                    setIsLoading(true);
+                    if(!loggingIn) {
+                      console.log(selectEmail);
+                      firebase.auth().createUserWithEmailAndPassword(selectEmail, selectPassword).then((userCredential) => {
+                        // Signed in
+                        var user = userCredential.user;
+                        console.log(user);
+                        if(selectedRole === Role.MENTOR) {
+                          db.collection("users").doc(user.uid).set({
+                            role: Role.MENTOR,
+                            email: selectEmail,
+                            name: selectName,
+                            school: selectSchool
+                          })
+                        } else if(selectedRole === Role.MENTEE) {
+                          db.collection("users").doc(user.uid).set({
+                            role: Role.MENTEE,
+                            email: selectEmail
+                          })
+                        }
+                        setIsLoading(false);
+                        dispatch(hideModal());
+                        // ...
+                      })
+                      .catch((error) => {
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        console.log("error msg: " + errorMessage);
+                        // ..
+                      }
+                      );
+                    } else {
+                      firebase.auth().signInWithEmailAndPassword(selectEmail, selectPassword).then((userCredential) => {
+                        setIsLoading(false);
+                        dispatch(hideModal());
+                      })
+                      .catch((error) => {
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        console.log("error msg: " + errorMessage);
+                        // ..
+                       });
+                    }
+                  // signMenteeUp(selectEmail, selectPassword)
+                }}>
+                  {isLoading ? 'Loading…' : 'Submit'}
                 </Button>
             </Modal.Footer>
         </Modal>   
