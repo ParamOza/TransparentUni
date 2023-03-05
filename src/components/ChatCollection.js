@@ -9,7 +9,7 @@ const  ChatCollection = () => {
     const [user, setUser] = useState(null);
     const ref = useRef();
     const messagesList = db.collection('messages');
-    const query = messagesList.orderBy('createdAt').limit(1000);
+    const query = messagesList.orderBy('createdAt').limit(25);
   
     const [messages] = useCollectionData(query, { idField: 'id' });
   
