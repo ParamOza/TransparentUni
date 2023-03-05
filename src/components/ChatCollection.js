@@ -3,9 +3,10 @@ import { db } from '../firebase';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { useEffect, useRef, useState } from 'react';
 import ChatMessage from './ChatMessage';
+import Navmenu from './Navmenu';
 
 
-const  ChatCollection = () => {
+const ChatCollection = () => {
     const [user, setUser] = useState(null);
     const ref = useRef();
     const messagesList = db.collection('messages');
@@ -39,6 +40,7 @@ const  ChatCollection = () => {
       }  
   
       return(<>
+        <Navmenu />
          <main className="chatbody"> 
             {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
             {<span ref={ref}></span>}

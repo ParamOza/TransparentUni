@@ -9,7 +9,7 @@ const RolePicker = () => {
         <Form.Label>Choose your appropriate role:</Form.Label>
         <Form.Check
             defaultChecked
-            label="Mentee"
+            label="Prospective Student"
             value="mentee"
             type='radio'
             name='role'

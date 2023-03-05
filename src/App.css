@@ -116,3 +116,7 @@ input {
   background: #d46f5f;
   color: white;
 }
+
+.card {
+  --bs-card-bg: #f2f2f2;
+}
