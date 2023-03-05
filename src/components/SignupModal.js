@@ -85,12 +85,12 @@ const SignupModal = () => {
                   <Button variant="secondary" onClick={() => dispatch(prevStep())} disabled={currentStep === 1}>
                       Previous
                   </Button>
-                  <Button variant="info" onClick={() => dispatch(nextStep())} disabled={currentStep === NUM_STEPS}>
+                  <Button variant="primary" onClick={() => dispatch(nextStep())} disabled={currentStep === NUM_STEPS}>
                       Next
                   </Button>
                 </Fragment>
                 : null}
-                <Button variant="primary" type="submit" disabled={((currentStep != NUM_STEPS) || isLoading) && !loggingIn} onClick={() => {
+                <Button variant="success" type="submit" disabled={((currentStep != NUM_STEPS) || isLoading) && !loggingIn} onClick={() => {
                     setIsLoading(true);
                     if(selectedRole === Role.MENTOR && !selectEmail.split("@")[1].includes(".edu")) {
                       alert("Please use a school email ending in .edu");
