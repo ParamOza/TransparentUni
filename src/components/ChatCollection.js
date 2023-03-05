@@ -4,13 +4,14 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { useEffect, useRef, useState } from 'react';
 import ChatMessage from './ChatMessage';
 import Navmenu from './Navmenu';
+import Footer from './Footer';
 
 
 const ChatCollection = () => {
     const [user, setUser] = useState(null);
     const ref = useRef();
     const messagesList = db.collection('messages');
-    const query = messagesList.orderBy('createdAt').limit(25);
+    const query = messagesList.orderBy('createdAt');
   
     const [messages] = useCollectionData(query, { idField: 'id' });
   
@@ -39,17 +40,19 @@ const ChatCollection = () => {
   
       }  
   
-      return(<>
+      return(<div class = "base">
         <Navmenu />
-         <main className="chatbody"> 
+         <div className="chatbody container"> 
             {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
             {<span ref={ref}></span>}
-         </main>
-            <form className="chatform" onSubmit={sendMessage}>
-              <input value={formValue} onChange={(e) => setFormValue(e.target.value)}/>
-              <button type="submit">Send</button>
-          </form>
-      </>);
+         </div>
+         <div class = "container align-items-center justify-content-center">
+        <form class="chatform d-flex mb-4" onSubmit={sendMessage}>
+                <input value={formValue} onChange={(e) => setFormValue(e.target.value)}/>
+                <button class = "p-8"type="submit">Send</button>
+            </form>
+          </div>
+      </div>);
   }
 
 export default ChatCollection;

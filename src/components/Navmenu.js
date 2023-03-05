@@ -52,7 +52,7 @@ const Navmenu = () => {
           {
             user ?
               <div>
-                <p>Welcome, {user.email}</p>
+                <p class = "welcome-p mx-2">Welcome, {user.email}</p>
                 <button class="btn btn-primary" onClick={signUserOut}>Sign Out</button>
               </div> :
               <Login />}
