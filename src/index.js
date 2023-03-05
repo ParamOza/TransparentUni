@@ -7,6 +7,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store';
 import { Provider } from 'react-redux';
+import ChatCollection from './components/ChatCollection';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +17,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/ratings" element={<Ratings />} />
+        <Route path= "/chatroom" element={<ChatCollection/>} />
       </Routes>
     </BrowserRouter>
   </Provider>
