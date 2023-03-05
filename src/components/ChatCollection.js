@@ -43,7 +43,7 @@ const ChatCollection = () => {
   
       }  
   
-      return(<>
+      return(<div class = "base">
         <Navmenu />
 
         {
@@ -60,7 +60,7 @@ const ChatCollection = () => {
            </form>
            </Fragment>)
         }
-      </>);
+      </div>);
   }
 
 export default ChatCollection;

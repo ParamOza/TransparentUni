@@ -54,9 +54,77 @@ h3{
 
 .paths:hover{
   text-decoration: none;
-  color: #d46f5f;
 }
 
-.card{
+.chatbody {
+  background-color: white;
+  padding-bottom: 8vh;
+}
+
+.chatform {
+  position: fixed;
+  bottom: 0;
+  background-color: #cdc8c8;
+  width: 100%;
+  max-width: 40%;
+  border-color: #cdc8c8;
+  border-radius: 10%;
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
+.chatform:hover{
+  opacity: 1;
+}
+form button {
+  width: 50%;
+  border-radius: 5%;
+  background-color: #cdc8c8;
+}
+form button:hover{
+  background: #cdc8c8;
+}
+input {
+  line-height: 1.5;
+  width: 100%;
+  font-size: 1.0rem;
+  background: white;
+  color: #497184;
+  padding: 0 10px;
+}
+
+.chat-p {
+  max-width: 600px;
+  margin-bottom: 11px;
+  line-height: 25px;
+  padding: 15px 25px;
+  border-radius: 25px;
+  position: relative;
+  color: black;
+  text-align: center;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+}
+
+.sent {
+  flex-direction: row-reverse;
+}
+
+.sent .chat-p {
+  color: #d46f5f;
+  background: rgb(206, 200, 200);
+  align-self: flex-end;
+}
+.received .chat-p {
+  background: #d46f5f;
+  color: white;
+}
+
+.card {
   --bs-card-bg: #f2f2f2;
+}
+.welcome-p{
+  overflow: hidden visible;
 }
