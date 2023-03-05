@@ -4,16 +4,16 @@ import {useDispatch} from "react-redux";
 import { setIsLoggingIn } from "../redux/loginModalSlice";
 import { showModal } from "../redux/modalSlice";
 
-const SignupButton = () => {
+const LoginButton = () => {
     const dispatch = useDispatch();
     return (
-        <Button variant="primary" type="submit" onClick={() => {
+        <Button variant="primary" type="submit" onClick={() => { 
+            dispatch(setIsLoggingIn(true));
             dispatch(showModal());
-            dispatch(setIsLoggingIn(false));
         }}>
-            Sign Up
+            Log in
         </Button>
     );
 }
 
-export default SignupButton;
+export default LoginButton;
