@@ -7,7 +7,7 @@ import { showModal } from "../redux/modalSlice";
 const SignupButton = () => {
     const dispatch = useDispatch();
     return (
-        <Button variant="primary" type="submit" onClick={() => {
+        <Button className = "m-1" variant="primary" type="submit" onClick={() => {
             dispatch(showModal());
             dispatch(setIsLoggingIn(false));
         }}>
