@@ -41,3 +41,7 @@ h2{
 h3{
   font-size: 1em;
 }
+.paths{
+  text-decoration: none;
+  color: #497184;
+}

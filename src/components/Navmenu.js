@@ -1,4 +1,5 @@
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Outlet, Link } from "react-router-dom";
 import Login from './Login';
 import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -36,10 +37,10 @@ const Navmenu = () => {
           <Navbar.Collapse id="collapsable-toggle">
             <Nav className="mr-auto">
               <NavDropdown title="Resources">
-                <NavDropdown.Item href="#action/1.1">Ratings</NavDropdown.Item>
+                <NavDropdown.Item><Link className = "paths" to="/Ratings">Ratings</Link></NavDropdown.Item>
                 {
                   user ?
-                  <NavDropdown.Item href="#action/1.2">Chatroom</NavDropdown.Item> :
+                  <NavDropdown.Item><Link className = "paths" to="/Chatroom">Chatroom</Link></NavDropdown.Item> :
                     <div></div>
                 }
               </NavDropdown>
