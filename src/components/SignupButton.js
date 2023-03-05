@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import {useDispatch} from "react-redux";
-import { showModal } from "./redux/modalSlice";
+import { showModal } from "../redux/modalSlice";
 
 const SignupButton = () => {
     const dispatch = useDispatch();
