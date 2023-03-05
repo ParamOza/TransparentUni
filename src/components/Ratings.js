@@ -19,8 +19,10 @@ function Rating() {
       querySnapshot.forEach((doc) => {
         schools.push({ id: doc.id, ...doc.data() })
       })
+      schools.sort((a, b) => avg(b['scores']).toFixed(2) - avg(a['scores']).toFixed(2));
       setSchoolsState(schools); 
     })
+
   },[]);
 
   return (
@@ -33,8 +35,6 @@ function Rating() {
             return <SchoolRatingCard data={{ school: element['university'], numberOfRankings: element['scores'].length, average: avg(element['scores']).toFixed(2)}} />
           })
         }
-
-
       </div>
       <Footer />
     </div>

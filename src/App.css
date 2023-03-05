@@ -56,3 +56,7 @@ h3{
   text-decoration: none;
   color: #d46f5f;
 }
+
+.card{
+  --bs-card-bg: #f2f2f2;
+}
