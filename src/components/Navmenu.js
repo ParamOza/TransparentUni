@@ -1,4 +1,5 @@
-import Navbar from 'react-bootstrap/Navbar';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Outlet, Link } from "react-router-dom";
 import Login from './Login';
 import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -30,8 +31,23 @@ const Navmenu = () => {
       <Navbar>
         <Navbar.Brand>
           <span class="header-color-one">Transparent</span><span class="header-color-two">Uni</span>
-          
         </Navbar.Brand>
+        <div>
+          <Navbar.Toggle aria-controls="collapsable-toggle" />
+          <Navbar.Collapse id="collapsable-toggle">
+            <Nav className="mr-auto">
+              <NavDropdown title="Resources">
+                <NavDropdown.Item><Link className = "paths" to="/Ratings">Ratings</Link></NavDropdown.Item>
+                {
+                  user ?
+                  <NavDropdown.Item><Link className = "paths" to="/Chatroom">Chatroom</Link></NavDropdown.Item> :
+                    <div></div>
+                }
+              </NavDropdown>
+            </Nav>
+          </Navbar.Collapse>
+        </div>
+
         <Navbar.Collapse className="justify-content-end">
           {
             user ?
