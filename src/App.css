@@ -11,8 +11,8 @@
 }
 
 .btn-primary{ 
-  background: lightblue;
-  border-color: lightblue;
+  background: #497184;
+  border-color: #497184;
 }
 
 .aboutImage{
@@ -24,16 +24,16 @@
 }
 
 .header-color-one{
-  color: lightcoral;
+  color: #d46f5f;
 }
 .header-color-two{
-  color: lightblue;
+  color: #497184;
 }
 p{
   font-weight: 400;
 }
 h1{
-  color: lightblue;
+  color: #497184;
 }
 h2{
   font-size: 1.2em;
