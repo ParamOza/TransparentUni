@@ -53,10 +53,6 @@ const signMenteeUp = (email, password) => {
   );
 }
 
-const signMentorUp = (email, password) => {
-
-}
-
 const SignupModal = () => {
     const [isLoading, setIsLoading] = useState(false);
 
@@ -96,6 +92,11 @@ const SignupModal = () => {
                 : null}
                 <Button variant="primary" type="submit" disabled={((currentStep != NUM_STEPS) || isLoading) && !loggingIn} onClick={() => {
                     setIsLoading(true);
+                    if(selectedRole === Role.MENTOR && !selectEmail.split("@")[1].includes(".edu")) {
+                      alert("Please use a school email ending in .edu");
+                      setIsLoading(false);
+                      return;
+                    }
                     if(!loggingIn) {
                       console.log(selectEmail);
                       firebase.auth().createUserWithEmailAndPassword(selectEmail, selectPassword).then((userCredential) => {
