@@ -11,7 +11,7 @@ import '../App.css';
 function Rating() {
   const [schoolsState, setSchoolsState] = useState([]);
   let cards = [];
-  const avg = array => (array.reduce((a, b) => (a + b)) / array.length) || 0;
+  const avg = array => (array.reduce((a, b) => (a + b)) / array.length);
   const events = firebase.firestore().collection('ratings')
   let schools = []
   useEffect(() => {
