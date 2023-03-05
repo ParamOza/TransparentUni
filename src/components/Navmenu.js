@@ -2,8 +2,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import Login from './Login';
 import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import firebase from './firebase';
+import '../App.css';
+import firebase from '../firebase';
 import { useEffect, useState } from 'react';
 import SignupModal from './SignupModal';
 

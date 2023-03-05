@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { auth } from "./firebase";
+import { auth } from "../firebase";
 
 const user = auth.currentUser;
 
