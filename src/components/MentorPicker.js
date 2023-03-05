@@ -18,25 +18,25 @@ const MentorPicker = () => {
     }, []);
 
     return (
-        <div>
+        <div class = "container align-middle">
             <h1>Choose a mentor</h1>
-            {foundMentors.map((mentor) => {
-                return (
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Body>
-                            <Card.Title>Anonymous</Card.Title>
-                            <Card.Text>
-                                {mentor.school}
-                            </Card.Text>
-                            <Button variant="primary" onClick={() => {
-                                dispatch(setChosenMentor(mentor));
-                            }}>Choose</Button>
-                        </Card.Body>
-                    </Card>
-                )
-            }
-            )}
-        </div>
+                {foundMentors.map((mentor) => {
+                    return (
+                        <Card className = "card text-center" style={{ width: '18rem' }}>
+                            <Card.Body>
+                                <Card.Title>Anonymous</Card.Title>
+                                <Card.Text>
+                                    {mentor.school}
+                                </Card.Text>
+                                <Button variant="primary" onClick={() => {
+                                    dispatch(setChosenMentor(mentor));
+                                }}>Choose</Button>
+                            </Card.Body>
+                        </Card>
+                    )
+                }
+                )}
+            </div>
     )
 
 }

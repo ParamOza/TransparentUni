@@ -12,7 +12,7 @@ const ChatCollection = () => {
     const [user, setUser] = useState(null);
     const ref = useRef();
     const messagesList = db.collection('messages');
-    const query = messagesList.orderBy('createdAt').limit(25);
+    const query = messagesList.orderBy('createdAt');
 
     const selectedMentor = useSelector(state => state.mentor.mentor);
   
@@ -54,10 +54,14 @@ const ChatCollection = () => {
              {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
              {<span ref={ref}></span>}
           </main>
-          <form onSubmit={sendMessage}>
-               <input value={formValue} onChange={(e) => setFormValue(e.target.value)}/>
+          <div class = "container">
+          <form class="chatform mb-4 col text-center" onSubmit={sendMessage}>
+              <div class = "row">
+               <input class = "chat-input" value={formValue} onChange={(e) => setFormValue(e.target.value)}/>
                <button type="submit">Send</button>
+              </div>
            </form>
+           </div>
            </Fragment>)
         }
       </div>);
